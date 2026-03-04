@@ -1,9 +1,8 @@
-package ra.hunghx.dto.response;
+package ra.hunghx.dto.request;
 
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
-import ra.hunghx.validate.EmailUnique;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

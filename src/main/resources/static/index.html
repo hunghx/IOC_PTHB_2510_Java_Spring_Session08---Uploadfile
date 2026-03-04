@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Up ảnh </h1>
+<form id="form">
+    <input type="file" name="" id="image">
+    <button type="submit">Gửi</button>
+</form>
+<img src="" id="preview">
+<script>
+    let form = document.getElementById("form");
+    form.addEventListener("submit", function (e){
+        e.preventDefault();
+        // call api
+        let file = document.getElementById("image").files[0];
+        let formData = new FormData();
+        formData.append("file", file);
+        fetch("http://localhost:8080/uploads",{
+            method : "POST",
+            body:formData
+        }).then(res=> res.json())
+            .then(res =>{
+                console.log(res)
+                document.getElementById("preview").src = res.url;
+            }).catch(err=> console.log(err))
+    })
+
+</script>
+</body>
+</html>

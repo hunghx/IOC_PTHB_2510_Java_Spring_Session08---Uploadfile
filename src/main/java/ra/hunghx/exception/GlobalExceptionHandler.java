@@ -38,7 +38,7 @@ public class GlobalExceptionHandler {
     }
     // bắt và xử ly
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<?> handlerArgument(ResourceNotFoundException ex){
+    public ResponseEntity<?> handlerResourceNotFound(ResourceNotFoundException ex){
 
         ErrorResponseDto res = ErrorResponseDto.builder()
                 .code(404) // ko tìm thấy
