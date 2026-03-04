@@ -3,6 +3,7 @@ package ra.hunghx.dto.request;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -16,6 +17,7 @@ public class CandidateCreateDTO {
     @Positive(message = "Tổi phải là số nguyên dương")
     @Min(value = 18, message = "TUổi tối thiếu là 18")
     private int age;
+    private MultipartFile file;
     @PositiveOrZero(message = "Không được là số âm")
     private int yearsOfExperience;
 }
